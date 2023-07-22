@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int set(int n, int pos){return (n | (1<<pos));}
-int toggle(int n, int pos){return (n ^ (1<<pos));}
-int clear(int n, int pos){return (n & ~(1<<pos));}
-int read(int n, int pos){return (1 & (n>>pos));}
+int set(int n, int pos){return (n | (1UL<<pos));}
+int toggle(int n, int pos){return (n ^ (1UL<<pos));}
+int clear(int n, int pos){return (n & ~(1UL<<pos));}
+int read(int n, int pos){return (1U & (n>>pos));}
 
 int main(void){
     int n; int pos;

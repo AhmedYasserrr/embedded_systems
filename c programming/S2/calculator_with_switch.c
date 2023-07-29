@@ -11,32 +11,32 @@ int main(void){
     printf("Welcome in calculator app\n");
     printf("Enter: type of operation  num1 num2\n");
     printf("1 for +, 2 for -, 3 for *, 4 for / \n");
-    scanf(" %c %f %f",&op, &n1, &n2);
+    scanf(" %d %f %f",&op, &n1, &n2);
 
-while(op != -1){
+while(1){
     switch(op){
-        case '1':
-            printf("%f", n1+n2); op = -1;
+        case 1:
+            printf("%f", n1+n2); return 0;
             break;
-        case '2':
-            printf("%f", n1-n2); op = -1;
+        case 2:
+            printf("%f", n1-n2); return 0;
             break;
-        case '3':
-            printf("%f", n1*n2); op = -1;
+        case 3:
+            printf("%f", n1*n2); return 0;
             break;
-        case '4':
+        case 4:
                 if(n2 == 0){ printf("this is not applicable\n"); 
-                op = '5';}
-                else {printf("%f", (double)(n1) / n2); op = -1;}
+                op = 5;}
+                else {printf("%f", (double)(n1) / n2); return 0;}
             break; 
-        case '5':
+        case 5:
                 printf("Enter: type of operation  num1 num2\n");
                 printf("1 for +, 2 for -, 3 for *, 4 for / \n");
-                scanf(" %c %f %f",&op, &n1, &n2);
+                scanf(" %d %f %f",&op, &n1, &n2);
                 break;
         default:
             printf("this is not an operation\n");
-            op = '5';
+            op = 5;
             break;
     }
 }

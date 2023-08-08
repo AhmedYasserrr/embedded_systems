@@ -1,11 +1,18 @@
+/************************************************************
+* Filename: factorial
+* Author: Ahmed Yasser
+* Date: 29 / 7 / 2023
+************************************************************/
 #include <stdio.h>
-
-int main() {
-	int i = 0, x = 1;
-   printf("%d\n",i);
-   x = i++;
-   printf("%d\n",i);
-   x += ++i;
-   printf("%d\n",x);
-   return 0;
+long long int fact(long long int n){
+		if(n == 1 || n==0) return 1;
+		else return fact(n-1) * n;
 }
+
+int main()
+{
+	long long int n = 5;
+    printf("%lld", fact(n));
+    return 0;
+}
+

@@ -4,7 +4,7 @@
 * Date: 11 / 8 / 2023
 ************************************************************/
 #include <stdio.h>
-int FindTheGreatest(int a[], int a_size);
+int FindTheGreatest(int *a, int a_size);
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
     printf("%d", FindTheGreatest(a, (int)(sizeof(a)/ sizeof(a[0]))));
 }
 
-int FindTheGreatest(int a[], int a_size){
+int FindTheGreatest(int *a, int a_size){
     int mx = 0;
    for(int i=0; i < a_size; i++){
         if(a[i]> mx)

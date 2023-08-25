@@ -15,7 +15,13 @@ int main(){
     Printlist();
     DeleteNode(2);
     Printlist();
-    Insert(100, 4);
+    Insert(100, 2);
+    Printlist();
+    ReverseListRecursively(head);
+    Printlist();
+    ReverseList();
+    Printlist();
+    Append(67);
     Printlist();
     return 0;
 }
@@ -60,8 +66,38 @@ void Insert(int num, int position){
 }
 
 void Append(int num){
-    
-    
+    Node* hd = head;
+    Node* node = (Node*) malloc(sizeof(Node));
+    while(hd -> next != NULL){
+        hd = hd -> next;
+    }
+    node -> data = num;
+    node -> next = hd -> next;
+    hd -> next = node;
+}
+
+void ReverseList(){
+    Node* past_node = NULL;
+    Node* next_node = head;
+    while(next_node != NULL){
+        Node* node = next_node;
+        next_node = node -> next;
+        node -> next = past_node;
+        past_node = node;
+    }
+    head = past_node;
+}
+
+void ReverseListRecursively(Node* node){
+    if(node -> next != NULL){
+        ReverseListRecursively(node -> next);
+        Node* temp = node -> next -> next;
+        node -> next -> next = node;
+        node -> next = temp;
+    }
+    else {
+        head = node;
+    } 
 }
 
 void PrintRecursively(Node* hd){
